@@ -39,7 +39,7 @@ from dataset_utils import *
     
 """
 
-dataset = read_LOL_Master_Ranked_Games
+dataset = read_ida2016
 output_file = "result.json"
 num_trials = 10
 total_pop_size = 100
