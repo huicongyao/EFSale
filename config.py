@@ -39,7 +39,7 @@ from dataset_utils import *
     
 """
 
-dataset = read_credit_card_default
+dataset = read_LOL_Master_Ranked_Games
 output_file = "result.json"
 num_trials = 10
 total_pop_size = 100

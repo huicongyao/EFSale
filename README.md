@@ -1,12 +1,11 @@
 Please install python 3.5 and above
 
 Dependencies:
-===================================================
+
 pip install -r requirements.txt
-===================================================
 
 Basic Instructions:
-=========================================================================================
+
 Add the used dataset in the "datasets" folder, and add a read dataset function in "dataset_utils" file.
 
 Put the experiment settings for running a specific algorithm in "config.py" file.
