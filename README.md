@@ -1,8 +1,10 @@
 Please install python 3.5 and above
 
-Dependencies:
+### Dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
 Basic Instructions:
 
