@@ -32,13 +32,13 @@ if __name__ == '__main__':
 
     _, _, _, dataset_identifier = config.dataset()
 
-    list_of_identifiers = ['_LEEA', "_SBPSO"]
+    list_of_identifiers = ['_ALEEFS', "_SBPSO", "_GA"]
     print(list_of_identifiers)
 
-    graph_lines = ['y^--', 'rv--']
-    graph_color = ['y', 'r']
+    graph_lines = ['y^--', 'rv--', 'b*--']
+    graph_color = ['y', 'r', 'b']
 
-    labels = ["LEEA","SBPSO"]
+    labels = ["ALEEFS","SBPSO", "GA"]
     out_file = config.output_file
 
     with open(out_file, "r") as read_file:
@@ -67,7 +67,7 @@ if __name__ == '__main__':
                          color=graph_color[i], alpha=0.2)
 
     axes = plt.gca()
-    # axes.set_xlim([500, 4000])
-    # axes.set_ylim([0.83, 0.94])
+    # axes.set_xlim([0, 10000])
+    # axes.set_ylim([0.97, 1])
     plt.legend(loc="lower right")
     plt.show()

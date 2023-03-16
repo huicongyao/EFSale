@@ -14,7 +14,7 @@ from dataset_utils import generate_mini_batch
 from metaheuristics.population import Population
 from metaheuristics.ga import GeneticAlgorithm
 
-class LEEA_main(GeneticAlgorithm):
+class ALEEFS_main(GeneticAlgorithm):
     """
         Genetic Algorithm (main object for calling GA)
 
@@ -125,7 +125,8 @@ class LEEA_main(GeneticAlgorithm):
                     self.num_evaluation += self.evaluate_task("offspring", mini_train_dataset=miniset)
                     error.append(self.leea_elitist_selection(0.5, mini_train_dataset=miniset))
                     update_list.append(1)
-                elif error[len(error)-1] > np.mean(error) or flag == 8: # 更新数据集
+                elif error[len(error)-1] > np.mean(error) or flag == 8: # 更新数据集：当误差过打或者演化8代
+                                                                        # 还没有更新新的小数据集时，更新数据集
                     flag = 0
                     miniset = \
                             generate_mini_batch(train_dataset=self.train_dataset, 

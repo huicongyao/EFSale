@@ -39,13 +39,13 @@ from dataset_utils import *
     
 """
 
-dataset = read_ida2016
+dataset = read_credit_card_default
 output_file = "result.json"
 num_trials = 10
 total_pop_size = 100
-gen = 40
+gen = 100
 weight = 0.5
-# def minisize(method: str, gen: int):
+# parameters below only used in meml-ga and meml-sbpso
 num_tasks = 5
 lr = 0.05
 ti = 2

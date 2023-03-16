@@ -71,21 +71,6 @@ def k_fold_split(X, y, k_folds):
     return list(zip(k_folds_X, k_folds_y))
 
 
-def split_datasets_for_MEML(X: np.ndarray, y: np.ndarray, test_size: float, k_folds: int, random_state: int = None) -> \
-Tuple[List, tuple]:
-    """
-        Main function for splitting dataset for each auxiliary task
-    """
-
-    train_X, train_y, test_X, test_y = train_test_split_stratified(X, y, test_size, random_state)
-    if k_folds == 0:
-        return [(train_X, train_y)], (test_X, test_y)
-    else:
-        train_datasets = k_fold_split(train_X, train_y, k_folds)
-        train_datasets.append((train_X, train_y))
-        # train_datasets.append((X, y))
-        return train_datasets, (test_X, test_y)
-
 
 def output_to_json(**kwargs):
     """
