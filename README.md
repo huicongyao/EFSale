@@ -16,4 +16,6 @@ Execute "mian.py" to run different feature selection algorithms (GA, SBPSO and A
 
 EXecute "plot_result.py" to show the difference among feature selection algorithms
 
-NOTE: In the current version, only the classifier accuracy is used as the fitness function in different algorithms. For users who want to include an additional term in the fitness function, they can add the codes for defining the additional term in the get_additonal_term() function in  "metaheuristics/fitness_fun.py" file.
+NOTE: 
+1. In the current version, only the classifier accuracy is used as the fitness function in different algorithms. For users who want to include an additional term in the fitness function, they can add the codes for defining the additional term in the get_additonal_term() function in  "metaheuristics/fitness_fun.py" file.
+2. You may find running ALEEFS usually cost more time, that is because we have compete evert feature in all training set first to transform the computing cost, and then cover it with mini train data set.

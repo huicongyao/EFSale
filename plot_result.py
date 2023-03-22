@@ -32,17 +32,18 @@ if __name__ == '__main__':
 
     _, _, _, dataset_identifier = config.dataset()
 
-    list_of_identifiers = ['_ALEEFS', "_SBPSO", "_GA"]
+    list_of_identifiers = ["_GA","_SBPSO", "_ALEEFS"]
     print(list_of_identifiers)
 
     graph_lines = ['y^--', 'rv--', 'b*--']
     graph_color = ['y', 'r', 'b']
 
-    labels = ["ALEEFS","SBPSO", "GA"]
+    labels = ["GA","SBPSO", "ALEEFS"]
     out_file = config.output_file
 
     with open(out_file, "r") as read_file:
         new_data = json.load(read_file)
+    
 
     # print(new_data.keys())
 
@@ -51,11 +52,16 @@ if __name__ == '__main__':
 
     print("\n\n")
     print(dataset_identifier)
+    time_cost = []
     for i in range(len(list_of_identifiers)):
         result = new_data[dataset_identifier + list_of_identifiers[i]]
         fn_eval_array = np.array(result['num_evaluation_list'])
         fitness_array = np.array(result['fitness_list'])
+        time_cost.append(result["time_cost"])
+        print(result.keys())
         avg_fn_eval_list = np.mean(fn_eval_array, axis=0)
+        if i == 1:
+            avg_fn_eval_list = avg_fn_eval_list * time_cost[1] / time_cost[0]
         avg_fitness_list = np.mean(fitness_array, axis=0)
 
         std_fitness_list = np.std(fitness_array, axis=0)

@@ -45,8 +45,8 @@ if __name__ == '__main__':
     """
     alg_names = []
     alg_names.append("ALEEFS")
-    # alg_names.append("GA")
-    # alg_names.append("SBPSO")
+    alg_names.append("GA")
+    alg_names.append("SBPSO")
 
     X, y, dim, dataset_name = config.dataset()  # import dataset from the configuration file
 
@@ -84,7 +84,7 @@ if __name__ == '__main__':
             experiment_meta = {"dataset_name": dataset_name, "pop_size": config.total_pop_size, "gen": config.gen,
                             "algorithm": alg_name, "num_trial": config.num_trials,
                             "json_filename": config.output_file, "fitness_list": list_of_fitness,
-                            "num_evaluation_list": list_of_num_evaluation}
+                            "num_evaluation_list": list_of_num_evaluation, "time_cost": time_cost / config.num_trials}
             output_to_json(**experiment_meta)
         
             print("Total time cost: {},"
@@ -122,7 +122,7 @@ if __name__ == '__main__':
             experiment_meta = {"dataset_name": dataset_name, "pop_size": config.total_pop_size, "gen": config.gen,
                             "algorithm": alg_name, "num_trial": config.num_trials,
                             "json_filename": config.output_file, "fitness_list": list_of_fitness,
-                            "num_evaluation_list": list_of_num_evaluation}
+                            "num_evaluation_list": list_of_num_evaluation,"time_cost": time_cost / config.num_trials}
             output_to_json(**experiment_meta)
         
             print("Total time cost: {},"
@@ -160,7 +160,7 @@ if __name__ == '__main__':
             experiment_meta = {"dataset_name": dataset_name, "pop_size": config.total_pop_size, "gen": config.gen,
                             "algorithm": alg_name, "num_trial": config.num_trials,
                             "json_filename": config.output_file, "fitness_list": list_of_fitness,
-                            "num_evaluation_list": list_of_num_evaluation}
+                            "num_evaluation_list": list_of_num_evaluation, "time_cost": time_cost / config.num_trials}
             output_to_json(**experiment_meta)
         
             print("Total time cost: {},"
