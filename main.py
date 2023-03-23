@@ -1,7 +1,7 @@
 import config
 from dataset_utils import *
 from metaheuristics.ga import GA_main
-from metaheuristics.aleefs import ALEEFS_main
+from metaheuristics.efsale import EFSale_main
 from metaheuristics.sbpso import SBPSO_main
 from metaheuristics.population import Population
 from metaheuristics.fitness_fun import *
@@ -44,7 +44,7 @@ if __name__ == '__main__':
             Contain the hyperparameter and information of the experiment, to be stored together with the results in the output
     """
     alg_names = []
-    alg_names.append("ALEEFS")
+    alg_names.append("EFSale")
     alg_names.append("GA")
     alg_names.append("SBPSO")
 
@@ -90,7 +90,7 @@ if __name__ == '__main__':
             print("Total time cost: {},"
                 " average time cost: {}".format(time_cost, time_cost / config.num_trials))
         
-        if alg_name == "ALEEFS":
+        if alg_name == "EFSale":
             print("\nADAPTIVE LIMITED EVALUATION EVOLUTION ALGORITHM\n\n")
             list_of_fitness = []
             list_of_num_evaluation = []
@@ -108,7 +108,7 @@ if __name__ == '__main__':
                 train_X, train_y, test_X, test_y = \
                     train_test_split_stratified(X=X, y=y, test_size=0.2, random_state=i)
                 train_dataset, test_dataset = (train_X, train_y), (test_X, test_y)
-                alg = ALEEFS_main(gen=config.gen, total_pop_size=config.total_pop_size, 
+                alg = EFSale_main(gen=config.gen, total_pop_size=config.total_pop_size, 
                                 f=fitness_function, weight=config.weight,
                                 train_dataset=train_dataset, 
                                 test_dataset=test_dataset, 

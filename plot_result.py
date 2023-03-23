@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
     _, _, _, dataset_identifier = config.dataset()
 
-    list_of_identifiers = ["_GA","_SBPSO", "_ALEEFS"]
+    list_of_identifiers = ["_GA","_SBPSO", "_EFSale"]
     print(list_of_identifiers)
 
     graph_lines = ['y^--', 'rv--', 'b*--']

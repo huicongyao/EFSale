@@ -14,7 +14,7 @@ from dataset_utils import generate_mini_batch
 from metaheuristics.population import Population
 from metaheuristics.ga import GeneticAlgorithm
 
-class ALEEFS_main(GeneticAlgorithm):
+class EFSale_main(GeneticAlgorithm):
     """
         Genetic Algorithm (main object for calling GA)
 
