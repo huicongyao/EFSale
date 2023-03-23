@@ -38,7 +38,7 @@ if __name__ == '__main__':
     graph_lines = ['y^--', 'rv--', 'b*--']
     graph_color = ['y', 'r', 'b']
 
-    labels = ["GA","SBPSO", "ALEEFS"]
+    labels = ["GA","SBPSO", "EFSale"]
     out_file = config.output_file
 
     with open(out_file, "r") as read_file:
@@ -74,6 +74,7 @@ if __name__ == '__main__':
 
     axes = plt.gca()
     # axes.set_xlim([0, 10000])
-    # axes.set_ylim([0.97, 1])
+    # axes.set_ylim([0.78, 0.83])
+    # axes.set_ylim([0.92, 0.94])
     plt.legend(loc="lower right")
     plt.show()
